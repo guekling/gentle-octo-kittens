@@ -9,6 +9,10 @@ export class ShoppingBasket {
     return this.shoppingBasket;
   }
 
+  /**
+   * Process user input shopping basket item, and add processed item into the shopping basket
+   * @param {string} shoppingBasketItem 
+   */
   processShoppingBasket(shoppingBasketItem) {
     const itemName = shoppingBasketItem.split(' at ')[0].split(' ').slice(1).join(' ').toLowerCase();
     const itemPrice = shoppingBasketItem.split(' at ')[1];

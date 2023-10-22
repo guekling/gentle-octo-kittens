@@ -19,10 +19,20 @@ export class Item {
 
   constructor() { }
 
+  /**
+   * 
+   * @param {string} item shopping basket item, e.g. 'imported box of chocolates'
+   * @returns {boolean}
+   */
   isImported(item) {
-    return item.includes('imported');
+    return item.toLowerCase().includes('imported');
   }
 
+  /**
+   * 
+   * @param {string} item shopping basket item, e.g. 'imported box of chocolates'
+   * @returns {CATEGORY}
+   */
   checkCategory(item) {
     for (const [key, value] of Object.entries(this.CATEGORY_KEYWORDS)) {
       const isMatched = matchString(value, item);
@@ -56,6 +66,14 @@ export class Item {
     return Big(importTaxes ?? 0).add(basicTaxes ?? 0);
   }
 
+  /**
+   * 
+   * @param {string} price 
+   * @param {CATEGORY} category 
+   * @param {boolean} isImported 
+   * @param {number} quantity 
+   * @returns {Object}
+   */
   calculateItem(price, category, isImported, quantity) {
     const taxesPerItem = this.calculateTaxesPerItem(price, category, isImported);
     const pricePerItem = Big(price).add(taxesPerItem);

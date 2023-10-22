@@ -10,8 +10,8 @@ export class Receipt {
 
   /**
    * 
-   * @param {string} name item name
-   * @param {number} quantity 
+   * @param {string} name item name, e.g. 'chocolate bar'
+   * @param {number} quantity quantity > 0
    * @param {Big} pricePerItem price inclusive of sales taxes
    * @returns {string}
    */
@@ -24,9 +24,13 @@ export class Receipt {
     }
 
     const itemName = capitalizeFirstLetter(name);
-    return `${itemName}: ${totalItemPrice} ${formatQuantity ? formatQuantity : ''}\n`;
+    return `${itemName}: ${totalItemPrice.toFixed(2)} ${formatQuantity ? formatQuantity : ''}\n`;
   }
 
+  /**
+   * Formats the receipt
+   * @returns {string}
+   */
   printReceipt() {
     let totalReceiptTaxes = Big(0);
     let totalSalesPrice = Big(0);

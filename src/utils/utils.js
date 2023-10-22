@@ -1,9 +1,20 @@
 import Big from 'big.js';
 
+/**
+ * Checks if string matches any of the words in the array
+ * @param {string[]} arr 
+ * @param {string} str 
+ * @returns {boolean}
+ */
 export function matchString(arr, str) {
-  return arr.some(e => str.includes(e));
+  return arr.some(e => str.toLowerCase().includes(e));
 }
 
+/**
+ * 
+ * @param {string} str 
+ * @returns {string}
+ */
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }

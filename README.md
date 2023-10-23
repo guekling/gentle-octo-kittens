@@ -6,6 +6,14 @@ Click [here](./task.md) for the original README.
 
 # Contents
 
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Input](#input)
+  * [Output](#output)
+  * [Sales Tax Calculation](#sales-tax-calculation)
+* [Testing](#testing)
+* [Libraries](#libraries)
+
 ## Installation
 
 1. Install dependencies

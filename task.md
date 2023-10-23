@@ -16,7 +16,10 @@ Write an application that takes input for shopping baskets and returns receipts 
 1 chocolate bar at 0.85
 
 Output 1:
-Book: 24.98 (2 @ 12.49) Music CD: 16.49 Chocolate bar: 0.85 Sales Taxes: 1.50
+Book: 24.98 (2 @ 12.49) 
+Music CD: 16.49 
+Chocolate bar: 0.85 
+Sales Taxes: 1.50
 Total: 42.32
 ```
 

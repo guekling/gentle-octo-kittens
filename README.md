@@ -39,6 +39,8 @@ For example:
 1 chocolate bar at 0.85
 ```
 
+To mark the end of the shopping basket, enter twice (i.e. `\n\n`).
+
 Note that the following assumptions are made for the input:
 
 1. Each line is of quantity = 1; and
@@ -73,9 +75,9 @@ The calculation of the sales tax is as follows:
 1. Basic tax is applicable at a rate of 10% on all goods, except books, food and medical products. Items are categorised by keywords in the `item_name`. The keywords are case-insensitive, and can be updated in `/src/services/Item.services.js`.
     ```javascript
     CATEGORY_KEYWORDS = {
-      [this.CATEGORY.BOOK]: ['book'],
-      [this.CATEGORY.FOOD]: ['chocolate'],
-      [this.CATEGORY.MEDICAL]: ['pill']
+      [this.CATEGORY.BOOK]: ['book', 'new_keyword'],
+      [this.CATEGORY.FOOD]: ['chocolate', 'new_keyword'],
+      [this.CATEGORY.MEDICAL]: ['pill', 'new_keyword']
     }
     ```
 
@@ -84,6 +86,8 @@ The calculation of the sales tax is as follows:
 2. Import duty is applicable at a rate of 5% on all imported goods. Imported goods are determined by the keyword "imported" (case-insensitive) in the `item_name`.
 
     a. For example: "imported box of chocolates".
+
+Note that the sales tax is rounded up to the nearest 0.05.
 
 ## Testing
 

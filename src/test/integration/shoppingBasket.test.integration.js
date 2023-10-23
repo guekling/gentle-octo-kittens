@@ -34,6 +34,22 @@ describe("ShoppingBasket.processShoppingBasket()", function () {
     });
   });
 
+  it("quantity > 1__same item, 1 lowercaps, 1 uppercaps", function () {
+    const shoppingBasket = new ShoppingBasket();
+    const item = new Item();
+    shoppingBasket.processShoppingBasket('1 book at 12.49');
+    shoppingBasket.processShoppingBasket('1 BOOK at 12.49');
+
+    expect(shoppingBasket.getShoppingBasket()).to.deep.equal({
+      book: {
+        price: '12.49',
+        quantity: 2,
+        isImported: false,
+        category: item.CATEGORY.BOOK,
+      }
+    });
+  });
+
   it("imported item", function () {
     const shoppingBasket = new ShoppingBasket();
     const item = new Item();
